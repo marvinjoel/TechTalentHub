@@ -1,9 +1,15 @@
 package com.TechTalentHub.tech_talent_hub.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "_user")
 public class User {
@@ -24,5 +30,5 @@ public class User {
     private String typeUser;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private UserDetails userDetails;
+    private Details userDetails;
 }
