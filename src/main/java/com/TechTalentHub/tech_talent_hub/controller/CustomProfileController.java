@@ -3,17 +3,17 @@ package com.TechTalentHub.tech_talent_hub.controller;
 
 import com.TechTalentHub.tech_talent_hub.model.Profiles;
 import com.TechTalentHub.tech_talent_hub.service.ProfileService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/profiles")
-public class ProfileController {
+@RequiredArgsConstructor
+public class CustomProfileController {
 
-    @Autowired
-    private ProfileService profileService;
+    private final ProfileService profileService;
 
     @GetMapping
     public ResponseEntity<?> getAllProfiles(){
