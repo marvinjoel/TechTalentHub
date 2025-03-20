@@ -4,6 +4,7 @@ import com.TechTalentHub.tech_talent_hub.model.Profiles;
 
 import java.util.List;
 
+
 public interface ProfileService {
     List<Profiles> findAllProfiles();
 

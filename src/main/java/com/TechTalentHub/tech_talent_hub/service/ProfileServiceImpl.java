@@ -2,14 +2,16 @@ package com.TechTalentHub.tech_talent_hub.service;
 
 import com.TechTalentHub.tech_talent_hub.model.Profiles;
 import com.TechTalentHub.tech_talent_hub.repository.ProfileRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class ProfileServiceImpl implements ProfileService {
 
-    @Autowired
-    private ProfileRepository profileRepository;
+    private final ProfileRepository profileRepository;
 
     @Override
     public List<Profiles> findAllProfiles(){

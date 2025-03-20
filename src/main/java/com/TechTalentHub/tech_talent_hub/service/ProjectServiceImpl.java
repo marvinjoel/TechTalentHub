@@ -1,19 +1,17 @@
 package com.TechTalentHub.tech_talent_hub.service;
 
-import com.TechTalentHub.tech_talent_hub.model.Profiles;
 import com.TechTalentHub.tech_talent_hub.model.Project;
 import com.TechTalentHub.tech_talent_hub.repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
+@RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService{
 
-    @Autowired
-    private ProjectRepository projectRepository;
+    private final ProjectRepository projectRepository;
 
     @Override
     public List<Project> findAllProject(){

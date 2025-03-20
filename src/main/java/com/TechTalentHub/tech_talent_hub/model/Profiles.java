@@ -15,8 +15,8 @@ public class Profiles {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    @JoinColumn(name = "details_id", nullable = false, unique = true)
+    private Details details;
 
     @Column(nullable = false)
     private String skills;
