@@ -12,10 +12,13 @@ public class Details {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "user_id", unique = true, nullable = false)
     private User user;
 
     @Column(length = 1200)
     private String picture;
+
+    @OneToOne(mappedBy = "details", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Profiles profile;
 }
