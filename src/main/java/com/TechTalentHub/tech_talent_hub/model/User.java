@@ -32,11 +32,14 @@ public class User implements UserDetails {
 
     private String password;
 
+    @Column(length = 1200)
+    private String photo;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Details userDetails;
+    private Profiles profiles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

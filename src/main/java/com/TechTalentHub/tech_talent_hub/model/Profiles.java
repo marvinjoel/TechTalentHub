@@ -1,5 +1,6 @@
 package com.TechTalentHub.tech_talent_hub.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,8 +16,9 @@ public class Profiles {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "details_id", nullable = false, unique = true)
-    private Details details;
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private User user;
 
     @Column(nullable = false)
     private String skills;
