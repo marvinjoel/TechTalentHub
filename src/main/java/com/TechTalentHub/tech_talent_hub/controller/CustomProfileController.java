@@ -9,16 +9,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/profiles")
+@RequestMapping("api/v1/profiles")
 @RequiredArgsConstructor
 public class CustomProfileController {
 
     private final ProfileService profileService;
 
-    @GetMapping
-    public ResponseEntity<?> getAllProfiles(){
-        return ResponseEntity.ok(profileService.findAllProfiles());
-    }
+//    @GetMapping
+//    public ResponseEntity<?> getAllProfiles(){
+//        return ResponseEntity.ok(profileService.findAllProfiles());
+//    }
 
     @PostMapping
     public ResponseEntity<?> saveProfile(@RequestBody Profiles profile){

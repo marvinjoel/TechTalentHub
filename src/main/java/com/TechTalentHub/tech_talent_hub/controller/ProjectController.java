@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/projects")
+@RequestMapping("api/v1/projects")
 @RequiredArgsConstructor
 public class ProjectController {
 
@@ -20,10 +20,10 @@ public class ProjectController {
 
     private final ProfileService profileService;
 
-    @GetMapping
-    public ResponseEntity<?> getAllProjects(){
-        return ResponseEntity.ok(projectService.findAllProject());
-    }
+//    @GetMapping
+//    public ResponseEntity<?> getAllProjects(){
+//        return ResponseEntity.ok(projectService.findAllProject());
+//    }
 
     @PostMapping("/{profileId}")
     public ResponseEntity<?> saveProjectForProfile(@PathVariable Long profileId, @RequestBody Project project){
